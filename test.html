@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <script src="dist/proxy-polyfill.js"></script>
+        <script>
+          var testObj = {
+            name: 'I\'m a test',
+            value: 123,
+            sub: {
+              name: 'sub'
+            },
+          };
+          var gets = [];
+          var p = new Proxy(testObj, {
+            get: function(obj, prop) {
+              gets.push(prop);
+              return obj[prop];
+            }
+          });
+
+          p.name;
+          p.sub;
+          p.sub.name;
+
+          var s = p.sub;
+          s.name; // not a get
+
+          if (gets.join(' ') !== 'name sub sub sub') {
+            throw Error('Proxy not polyfilled');
+          } else {
+            console.log('Polyfill success');
+          }
+        </script>
+    </body>
+</html>
