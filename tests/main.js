@@ -1,6 +1,12 @@
+var Dist = require('../index');
 var Impl = require('../test-helpers/implementation').default;
 var buildObject = require('../test-helpers/helpers').buildObject;
 var test = require('tape');
+
+test('dist', function(t) {
+  t.ok(typeof Dist === 'function', 'should import distributed package');
+  t.end();
+});
 
 test('get', function(t) {
   var testObj = buildObject();
