@@ -1,6 +1,6 @@
 ## es2015 Proxy
 [![Build Status](https://travis-ci.org/Matt-Jensen/es2015-proxy.svg?branch=master)](https://travis-ci.org/Matt-Jensen/es2015-proxy)
-[![Dependency Status](https://david-dm.org/Matt-Jensen/es2015-proxy.svg)](https://david-dm.org/Matt-Jensen/es2015-proxy#info=dependencies)
+[![GitHub version](https://badge.fury.io/gh/GoogleChrome%2Fproxy-polyfill.svg)](https://badge.fury.io/gh/GoogleChrome%2Fproxy-polyfill)
 
 A simple module that returns the native Proxy implementation if supported, otherwise resolves Google Chrome's [proxy-polyfill](https://github.com/GoogleChrome/proxy-polyfill).
 
