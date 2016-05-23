@@ -155,10 +155,10 @@ var Implementation = function () {
 }();
 
 if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
-  module.exports = Proxy || Implementation;
+  module.exports = typeof Proxy !== 'function' ? Implementation : Proxy;
 } else if (typeof define === 'function' && typeof define.amd !== 'undefined') {
   define(function () {
-    return Proxy || Implementation;
+    return typeof Proxy !== 'function' ? Implementation : Proxy;
   });
 } else if (window && !window.Proxy) {
   window.Proxy = Implementation;
